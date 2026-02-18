@@ -10,8 +10,8 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0a0a0a;
-  color: #e4e4e7;
+  background: #f8f9fb;
+  color: #2d3748;
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -22,17 +22,17 @@ body {
   padding: 80px 24px 60px;
 }
 
-.header { margin-bottom: 56px; }
+.header { margin-bottom: 48px; }
 .header h1 {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 800;
-  color: #fafafa;
+  color: #1a202c;
   letter-spacing: -1px;
   margin-bottom: 8px;
 }
 .header p {
-  font-size: 16px;
-  color: #71717a;
+  font-size: 17px;
+  color: #718096;
   line-height: 1.7;
   max-width: 520px;
 }
@@ -42,7 +42,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: #52525b;
+  color: #a0aec0;
   margin-bottom: 16px;
 }
 
@@ -54,19 +54,19 @@ body {
 
 .project {
   display: block;
-  background: #18181b;
-  border: 1px solid #27272a;
+  background: white;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 24px 28px;
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .project:hover {
-  border-color: #3f3f46;
-  background: #1c1c20;
+  border-color: #cbd5e0;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .project-top {
@@ -78,22 +78,22 @@ body {
 .project-name {
   font-size: 18px;
   font-weight: 700;
-  color: #fafafa;
+  color: #1a202c;
 }
 .project-arrow {
   font-size: 18px;
-  color: #52525b;
+  color: #cbd5e0;
   transition: transform 0.2s, color 0.2s;
 }
 .project:hover .project-arrow {
   transform: translateX(4px);
-  color: #a1a1aa;
+  color: #2c5282;
 }
 
 .project-desc {
   font-size: 14px;
-  color: #a1a1aa;
-  line-height: 1.6;
+  color: #718096;
+  line-height: 1.7;
   margin-bottom: 14px;
 }
 
@@ -107,24 +107,24 @@ body {
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 6px;
-  background: #27272a;
-  color: #a1a1aa;
+  background: #edf2f7;
+  color: #4a5568;
   letter-spacing: 0.2px;
 }
 
 .footer {
   margin-top: 56px;
   padding-top: 24px;
-  border-top: 1px solid #27272a;
+  border-top: 1px solid #e2e8f0;
   font-size: 13px;
-  color: #52525b;
+  color: #a0aec0;
 }
 .footer a {
-  color: #71717a;
+  color: #718096;
   text-decoration: none;
   transition: color 0.15s;
 }
-.footer a:hover { color: #a1a1aa; }
+.footer a:hover { color: #2c5282; }
 
 @media (max-width: 600px) {
   .page { padding: 48px 18px 40px; }
