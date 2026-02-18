@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoshi Peretti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0a0a0a;
+  color: #e4e4e7;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+}
+
+.header { margin-bottom: 56px; }
+.header h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fafafa;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+.header p {
+  font-size: 16px;
+  color: #71717a;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #52525b;
+  margin-bottom: 16px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project {
+  display: block;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 14px;
+  padding: 24px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.project:hover {
+  border-color: #3f3f46;
+  background: #1c1c20;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.project-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fafafa;
+}
+.project-arrow {
+  font-size: 18px;
+  color: #52525b;
+  transition: transform 0.2s, color 0.2s;
+}
+.project:hover .project-arrow {
+  transform: translateX(4px);
+  color: #a1a1aa;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #27272a;
+  color: #a1a1aa;
+  letter-spacing: 0.2px;
+}
+
+.footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid #27272a;
+  font-size: 13px;
+  color: #52525b;
+}
+.footer a {
+  color: #71717a;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer a:hover { color: #a1a1aa; }
+
+@media (max-width: 600px) {
+  .page { padding: 48px 18px 40px; }
+  .header h1 { font-size: 30px; }
+  .header { margin-bottom: 40px; }
+  .project { padding: 20px 22px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <h1>Yoshi Peretti</h1>
+    <p>Building things at the intersection of data, music, and design.</p>
+  </div>
+
+  <div class="section-label">Projects</div>
+  <div class="projects">
+    <a class="project" href="https://yoshiperetti.github.io/era-predictor/" target="_blank">
+      <div class="project-top">
+        <span class="project-name">ERA Predictiveness Analyzer</span>
+        <span class="project-arrow">&rarr;</span>
+      </div>
+      <div class="project-desc">
+        Backtested regression model that predicts next-season ERA from pitching metrics. Built on 800+ pitcher-seasons of FanGraphs data with interactive R&sup2; comparisons, 2026 projections, and scouting profiles for every pitcher.
+      </div>
+      <div class="project-tags">
+        <span class="tag">Statistics</span>
+        <span class="tag">Regression</span>
+        <span class="tag">Baseball</span>
+        <span class="tag">Plotly.js</span>
+      </div>
+    </a>
+
+    <a class="project" href="https://yoshiperetti.github.io/synthesizer/" target="_blank">
+      <div class="project-top">
+        <span class="project-name">Web Synthesizer</span>
+        <span class="project-arrow">&rarr;</span>
+      </div>
+      <div class="project-desc">
+        Browser-based synthesizer playable with your keyboard. Multiple waveforms, ADSR envelope, low-pass filter, reverb, and octave shifting — all built on the Web Audio API with zero dependencies.
+      </div>
+      <div class="project-tags">
+        <span class="tag">Web Audio API</span>
+        <span class="tag">Synthesizer</span>
+        <span class="tag">Music</span>
+        <span class="tag">Vanilla JS</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>Yoshi Peretti &middot; <a href="https://github.com/YoshiPeretti">GitHub</a></p>
+  </div>
+</div>
+</body>
+</html>
