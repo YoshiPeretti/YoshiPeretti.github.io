@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Re-Farm-erator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .poster {
+    width: 1080px;
+    min-height: 1400px;
+    background: #f4f1ec;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* top green banner */
+  .top-banner {
+    background: #1a6b3c;
+    color: #f4f1ec;
+    padding: 14px 40px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-banner .dots {
+    display: flex;
+    gap: 6px;
+  }
+  .top-banner .dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7dcea0;
+  }
+
+  /* hero section */
+  .hero {
+    padding: 50px 50px 0 50px;
+    position: relative;
+  }
+
+  .tagline-top {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #1a6b3c;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 96px;
+    line-height: 0.92;
+    color: #0a0a0a;
+    margin-bottom: 0;
+  }
+
+  .hero h1 .re { color: #1a6b3c; }
+  .hero h1 .farm {
+    display: inline-block;
+    background: #1a6b3c;
+    color: #f4f1ec;
+    padding: 4px 18px;
+    margin: 0 4px;
+    border-radius: 6px;
+  }
+  .hero h1 .erator { color: #0a0a0a; }
+
+  .hero-sub {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    line-height: 1.3;
+  }
+
+  /* big stat strip */
+  .stat-strip {
+    display: flex;
+    margin: 40px 0 0 0;
+    background: #0a0a0a;
+    color: #f4f1ec;
+  }
+
+  .stat-strip .stat {
+    flex: 1;
+    padding: 35px 30px;
+    border-right: 1px solid #333;
+    text-align: center;
+  }
+  .stat-strip .stat:last-child { border-right: none; }
+
+  .stat-strip .stat .number {
+    font-family: 'Syne', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: #7dcea0;
+    line-height: 1;
+  }
+
+  .stat-strip .stat .label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: #aaa;
+  }
+
+  /* the problem / solution section */
+  .split-section {
+    display: flex;
+    margin: 0;
+  }
+
+  .split-left {
+    flex: 1;
+    background: #d42a2a;
+    color: #f4f1ec;
+    padding: 50px;
+    position: relative;
+  }
+
+  .split-left::after {
+    content: '///';
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    opacity: 0.4;
+    letter-spacing: 4px;
+  }
+
+  .split-right {
+    flex: 1;
+    background: #1a6b3c;
+    color: #f4f1ec;
+    padding: 50px;
+    position: relative;
+  }
+
+  .split-right::after {
+    content: '///';
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    opacity: 0.4;
+    letter-spacing: 4px;
+  }
+
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 15px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .section-body {
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+
+  .slop-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+  .slop-list li {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .slop-list li .x {
+    font-weight: 700;
+    font-size: 16px;
+    opacity: 0.7;
+  }
+
+  .good-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+  .good-list li {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .good-list li .check {
+    color: #7dcea0;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  /* how it works */
+  .how-section {
+    padding: 55px 50px;
+    background: #f4f1ec;
+  }
+
+  .how-section .section-label {
+    color: #1a6b3c;
+    opacity: 1;
+    margin-bottom: 12px;
+  }
+
+  .how-section .section-title {
+    color: #0a0a0a;
+    margin-bottom: 35px;
+    font-size: 42px;
+  }
+
+  .steps {
+    display: flex;
+    gap: 25px;
+  }
+
+  .step {
+    flex: 1;
+    background: #fff;
+    border: 2px solid #e0ddd6;
+    border-radius: 12px;
+    padding: 30px 25px;
+    position: relative;
+    transition: all 0.2s;
+  }
+
+  .step:hover {
+    border-color: #1a6b3c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  }
+
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: #1a6b3c;
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 10px;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* fridge visual — pure CSS */
+  .fridge-visual {
+    display: flex;
+    justify-content: center;
+    padding: 40px 50px 0;
+    background: #f4f1ec;
+  }
+
+  .fridge {
+    width: 220px;
+    height: 340px;
+    background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 8px 8px 0 #1a6b3c;
+    border: 3px solid #bbb;
+  }
+
+  .fridge .door-top {
+    width: 100%;
+    height: 55%;
+    border-bottom: 3px solid #bbb;
+    position: relative;
+    border-radius: 13px 13px 0 0;
+    overflow: hidden;
+  }
+
+  .fridge .door-top .screen {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background: #0a0a0a;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .fridge .door-top .screen .screen-text {
+    color: #7dcea0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .fridge .door-top .screen .screen-emoji {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .fridge .handle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 40px;
+    background: #999;
+    border-radius: 3px;
+  }
+
+  .fridge .door-bottom {
+    width: 100%;
+    height: 45%;
+    position: relative;
+    border-radius: 0 0 13px 13px;
+  }
+
+  .fridge .door-bottom .handle {
+    top: 30%;
+  }
+
+  .fridge .leaf-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 50px;
+    height: 50px;
+    background: #1a6b3c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border: 3px solid #f4f1ec;
+  }
+
+  .fridge-label {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .fridge-label span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #1a6b3c;
+    background: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1.5px solid #1a6b3c;
+  }
+
+  .fridge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* bottom CTA */
+  .cta-section {
+    background: #0a0a0a;
+    padding: 45px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+  .cta-left .cta-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #f4f1ec;
+    line-height: 1.1;
+  }
+
+  .cta-left .cta-headline span {
+    color: #7dcea0;
+  }
+
+  .cta-left .cta-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+
+  .cta-right .cta-button {
+    background: #1a6b3c;
+    color: #f4f1ec;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .cta-right .cta-button:hover {
+    background: #23885a;
+    transform: scale(1.05);
+  }
+
+  /* bottom bar */
+  .bottom-bar {
+    background: #1a6b3c;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f4f1ec;
+  }
+
+  /* decorative elements */
+  .corner-accent {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 3px solid #1a6b3c;
+    opacity: 0.15;
+  }
+
+  .corner-accent.tl {
+    top: 60px;
+    left: 20px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .corner-accent.tr {
+    top: 60px;
+    right: 20px;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  /* quote block */
+  .quote-block {
+    background: #fff;
+    margin: 0 50px;
+    padding: 35px 40px;
+    border-left: 5px solid #1a6b3c;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .quote-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0a0a0a;
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  .quote-attr {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <!-- TOP BANNER -->
+  <div class="top-banner">
+    <span>Fresh Food for Every Student</span>
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span>The Future of School Nutrition</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="corner-accent tl"></div>
+    <div class="corner-accent tr"></div>
+    <div class="tagline-top">Introducing</div>
+    <h1>
+      <span class="re">Re</span>-<span class="farm">Farm</span>-<span class="erator">erator</span>
+    </h1>
+    <p class="hero-sub">The smart fridge replacing cafeteria slop<br>with real food kids actually want to eat.</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stat-strip">
+    <div class="stat">
+      <div class="number">30M</div>
+      <div class="label">Kids fed school lunch daily</div>
+    </div>
+    <div class="stat">
+      <div class="number">77%</div>
+      <div class="label">Of students dislike school food</div>
+    </div>
+    <div class="stat">
+      <div class="number">0</div>
+      <div class="label">Preservatives in our meals</div>
+    </div>
+    <div class="stat">
+      <div class="number">100%</div>
+      <div class="label">Farm-sourced ingredients</div>
+    </div>
+  </div>
+
+  <!-- PROBLEM / SOLUTION -->
+  <div class="split-section">
+    <div class="split-left">
+      <div class="section-label">The Problem</div>
+      <div class="section-title">School lunch is<br>broken.</div>
+      <div class="section-body">Kids are being served reheated, ultra-processed food that barely qualifies as nutrition.</div>
+      <ul class="slop-list">
+        <li><span class="x">&times;</span> Mystery meat patties</li>
+        <li><span class="x">&times;</span> Soggy canned vegetables</li>
+        <li><span class="x">&times;</span> Sugar-loaded "fruit" cups</li>
+        <li><span class="x">&times;</span> Plastic-wrapped processed snacks</li>
+        <li><span class="x">&times;</span> Food kids throw away untouched</li>
+      </ul>
+    </div>
+    <div class="split-right">
+      <div class="section-label">The Solution</div>
+      <div class="section-title">Farm-fresh,<br>on demand.</div>
+      <div class="section-body">The Re-Farm-erator stocks real meals made from local farm ingredients, ready when students are.</div>
+      <ul class="good-list">
+        <li><span class="check">&check;</span> Locally sourced whole ingredients</li>
+        <li><span class="check">&check;</span> Fresh wraps, salads, grain bowls</li>
+        <li><span class="check">&check;</span> Seasonal fruit &amp; real snacks</li>
+        <li><span class="check">&check;</span> Smart inventory — zero waste</li>
+        <li><span class="check">&check;</span> Food kids actually eat</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">Three steps. Fresh food.</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Install</div>
+        <div class="step-desc">A Re-Farm-erator unit gets placed in the cafeteria, hallway, or commons — wherever students need access.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Stock</div>
+        <div class="step-desc">Local farms and kitchens supply fresh meals, snacks, and drinks. Restocked daily based on smart demand tracking.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Serve</div>
+        <div class="step-desc">Students scan their ID, grab what they want, and go. No lines, no trays, no mystery meat. Just real food.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRIDGE VISUAL -->
+  <div class="fridge-visual">
+    <div class="fridge-container">
+      <div class="fridge">
+        <div class="leaf-badge">&#127807;</div>
+        <div class="door-top">
+          <div class="screen">
+            <div class="screen-emoji">&#127813;&#127822;&#129382;</div>
+            <div class="screen-text">Tap to browse</div>
+            <div class="screen-text" style="color: #555; font-size: 8px;">12 items available</div>
+          </div>
+        </div>
+        <div class="door-bottom">
+          <div class="handle"></div>
+        </div>
+      </div>
+      <div class="fridge-label" style="margin-top: 20px;">
+        <span>Smart. Fresh. Yours.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-block">
+    <div class="quote-text">"Every kid deserves to eat something that was actually grown, not just manufactured."</div>
+    <div class="quote-attr">The Re-Farm-erator Mission</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-left">
+      <div class="cta-headline">Bring it to <span>your school.</span></div>
+      <div class="cta-sub">Pilot programs now available for K-12 districts</div>
+    </div>
+    <div class="cta-right">
+      <button class="cta-button">Get Started</button>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <span>Re-Farm-erator &copy; 2026</span>
+    <span>Real Food. Real Change.</span>
+  </div>
+</div>
+</body>
+</html>
