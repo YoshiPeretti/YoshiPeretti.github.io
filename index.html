@@ -229,16 +229,28 @@ section { padding: 24px 0 72px; }
 .card .kicker { margin-bottom: 8px; }
 .card h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
 .card p { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; }
+p, li, .mypart { text-wrap: pretty; }
+h1, h2, h3, .question { text-wrap: balance; }
 .card .tags { margin-bottom: 18px; }
 .card .links { margin-top: auto; display: flex; gap: 16px; font-size: 13px; font-weight: 500; }
 .card .links a { text-decoration: none; color: var(--accent); }
 .card .links a:hover { text-decoration: underline; }
+.card img.thumb {
+  width: 100%; border-radius: 10px; border: 1px solid var(--line); margin-bottom: 16px; background: #f5f1ea;
+}
 .card .links .na { color: var(--ink-faint); font-weight: 400; }
 .live-dot {
   display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok);
   margin-right: 6px; vertical-align: 1px;
 }
 
+.about {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 24px 48px; align-items: baseline;
+  padding: 48px 0 64px; border-top: 1px solid var(--line);
+}
+.about h2 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 40px; }
+.about p { font-size: 17px; color: var(--ink-soft); max-width: 560px; }
+.about a { color: var(--accent); }
 footer {
   border-top: 1px solid var(--line); padding: 28px 0 44px;
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
@@ -249,6 +261,7 @@ footer a:hover { color: var(--accent); }
 
 @media (max-width: 820px) {
   .feature { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; gap: 10px; }
   .feature-visual { border-left: 0; border-top: 1px solid var(--line); min-height: 0; }
 }
 @media (max-width: 560px) {
@@ -276,21 +289,16 @@ footer a:hover { color: var(--accent); }
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#all" class="hide-sm">All projects</a>
+      <a href="#about" class="hide-sm">About</a>
       <a href="https://github.com/YoshiPeretti" target="_blank" rel="noopener">GitHub</a>
-      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">◐</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Switch between light and dark mode" title="Light / dark mode">◐</button>
     </div>
   </nav>
 
   <header class="hero">
     <h1>Yoshi Peretti</h1>
-    <p class="lede">
-      I make data projects and websites. Recently: a fact-checker for political speeches, a campus safety index
-      built from federal data, and a tool that compares your DNA file against GLP-1 drug research.
-    </p>
-    <p class="howiwork">
-      <b>How I work:</b> I build with AI coding tools, mainly Claude Code. The questions, the methods, and the
-      judgment calls about the data are mine, and each project below says what my part was.
-    </p>
+    <p class="lede">I make data projects and websites. Recently: a fact-checker for political speeches, a campus safety index built from federal data, and a tool that compares your DNA file against GLP-1 drug research.</p>
+    <p class="howiwork"><b>How I work:</b> I build with AI coding tools, mainly Claude Code. The questions, the methods, and the judgment calls about the data are mine, and each project below says what my part was.</p>
     <div class="hero-stats">
       <div><b>8</b>projects</div>
       <div><b>5</b>live sites</div>
@@ -314,26 +322,18 @@ footer a:hover { color: var(--accent); }
           <div class="kicker">Civic tech · In progress</div>
           <h3>Truth Profile</h3>
           <p class="question">What share of what politicians say is actually true, measured the same way for everyone?</p>
-          <p>
-            Every checkable factual claim in politicians' speeches, extracted in full and verified
-            <em>name-blind</em> by adversarial AI judges against primary evidence. Each claim is published with the
-            sample size, uncertainty, evidence, dissent, and a public dispute channel.
-          </p>
+          <p>Every checkable factual claim in politicians' speeches, extracted in full and verified <em>name-blind</em> by adversarial AI judges against primary evidence. Each claim is published with the sample size, uncertainty, evidence, dissent, and a public dispute channel.</p>
           <ul>
             <li>1,590 claims from 16 speeches by 8 politicians across both parties</li>
             <li>One public rubric drives every judging prompt and the methodology page</li>
-            <li>Published bias audit, including a party-label swap test</li>
+            <li>Built-in bias audit, including a test that swaps party labels</li>
           </ul>
-          <div class="mypart"><b>My part</b>
-            I designed the process: check every claim instead of cherry-picking, hide who said it from the judges,
-            put all the rules in one public rubric, and test for bias by swapping party labels. Claude models do the
-            extraction and judging under those rules; I review the results.
-          </div>
+          <div class="mypart"><b>My part</b> I designed the process: check every claim instead of cherry-picking, hide who said it from the judges, put all the rules in one public rubric, and test for bias by swapping party labels. Claude models do the extraction and judging under those rules; I review the results.</div>
           <div class="tags">
             <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Claude API</span><span class="tag">zod</span>
           </div>
           <div class="actions">
-            <span class="btn muted">Not public yet</span>
+            <span class="btn muted">In progress · not public yet</span>
           </div>
         </div>
         <div class="feature-visual" aria-hidden="true">
@@ -362,19 +362,14 @@ footer a:hover { color: var(--accent); }
           <div class="kicker"><span class="live-dot"></span>Health tech · Live</div>
           <h3>glp1genome</h3>
           <p class="question">What does current research actually say about how my genes affect GLP-1 drugs?</p>
-          <p>
-            Upload your existing 23andMe or AncestryDNA file and get an honest, personalized report on what
-            peer-reviewed research says about your genetics and response to GLP-1 medications like Ozempic and Wegovy.
-          </p>
+          <p>Upload your existing 23andMe or AncestryDNA file and get an honest, personalized report on what peer-reviewed research says about your genetics and response to GLP-1 medications like Ozempic and Wegovy.</p>
           <ul>
             <li>Interprets variants from a 2026 <em>Nature</em> study of 27,885 people</li>
             <li>Discloses replication failures instead of overselling results</li>
             <li>Accounts, file upload, and saved reports with Supabase</li>
           </ul>
-          <div class="mypart"><b>My part</b>
-            I read the studies and decided which genetic variants to include and how to word the results, including
-            telling users when a finding failed to replicate.
-          </div>
+          <div class="mypart"><b>My part</b> I read the studies and decided which genetic variants to include and how to word the results, including telling users when a finding failed to replicate.</div>
+          <p class="caveat">Educational only, not medical advice; every report says so and tells users to talk to their prescriber. Your DNA file is read in your browser. Only the six variants the report covers are sent to the server, and reports are saved only if you sign in.</p>
           <div class="tags">
             <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Genomics</span>
           </div>
@@ -398,23 +393,14 @@ footer a:hover { color: var(--accent); }
           <div class="kicker"><span class="live-dot"></span>Data journalism · Live</div>
           <h3>Campus Assault Index</h3>
           <p class="question">How do colleges compare when you count only the students who actually live on campus?</p>
-          <p>
-            Reported sexual offenses at 1,159 U.S. residential four-year colleges, per 10,000 on-campus students,
-            built from federal Clery Act data (2022–2024) and compared against the national median.
-          </p>
+          <p>Reported sexual offenses at 1,159 U.S. residential four-year colleges, per 10,000 on-campus students, built from federal Clery Act data (2022–2024) and compared against the national median.</p>
           <ul>
             <li>Python pipeline merges Department of Education Clery data with IPEDS enrollment</li>
             <li>Subtracts online-only students so rates reflect who actually lives on campus</li>
             <li>Flags small schools, one-year spikes, and zero-report colleges with large dorms</li>
           </ul>
-          <p class="caveat">
-            Reported numbers aren't the same as how often assaults happen: a higher rate can mean students feel safer
-            reporting. The site has its own <a href="https://campus-assault-index.vercel.app" target="_blank" rel="noopener">Underreporting</a> section on this.
-          </p>
-          <div class="mypart"><b>My part</b>
-            I chose the federal data sources and the measure (reports per 10,000 on-campus students), decided which
-            colleges qualify and what gets flagged, and checked the outliers by hand.
-          </div>
+          <p class="caveat">Reported numbers aren't the same as how often assaults happen: a higher rate can mean students feel safer reporting. The site has its own <a href="https://campus-assault-index.vercel.app" target="_blank" rel="noopener">Underreporting</a> section on this.</p>
+          <div class="mypart"><b>My part</b> I chose the federal data sources and the measure (reports per 10,000 on-campus students), decided which colleges qualify and what gets flagged, and checked the outliers by hand.</div>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">Clery Act</span><span class="tag">IPEDS</span><span class="tag">Vercel</span>
           </div>
@@ -451,7 +437,7 @@ footer a:hover { color: var(--accent); }
         <h3>ERA Predictiveness Analyzer</h3>
         <p class="question">Which pitching stats actually predict next season's ERA?</p>
         <p>Backtested regression model that predicts a pitcher's next-season ERA. Built on 800+ pitcher-seasons of FanGraphs data with interactive R² comparisons, 2026 projections, and a scouting profile for every pitcher.</p>
-        <div class="mypart"><b>My part</b>Pulled and cleaned the FanGraphs data in R and tested each stat by how well it predicted the following season, not the same one.</div>
+        <div class="mypart"><b>My part</b> Pulled and cleaned the FanGraphs data in R and tested each stat by how well it predicted the following season, not the same one.</div>
         <div class="tags"><span class="tag">R</span><span class="tag">Regression</span><span class="tag">Plotly.js</span></div>
         <div class="links">
           <a href="https://yoshiperetti.github.io/era-predictor/" target="_blank" rel="noopener">Live site ↗</a>
@@ -464,7 +450,7 @@ footer a:hover { color: var(--accent); }
         <h3>Echo Park After School Alliance</h3>
         <p class="question">Where can Echo Park parents find free or affordable after-school programs close to home?</p>
         <p>Interactive map of free and affordable after-school programs in Echo Park, Los Angeles, so parents can find nearby options for their kids.</p>
-        <div class="mypart"><b>My part</b>A student team researched the programs for a Social Innovation Program project. I built the website that puts their research on a map.</div>
+        <div class="mypart"><b>My part</b> A student team researched the programs for a Social Innovation Program project. I built the website that puts their research on a map.</div>
         <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Maps</span><span class="tag">Custom domain</span></div>
         <div class="links">
           <a href="https://echoparkafterschoolalliance.com" target="_blank" rel="noopener">Live site ↗</a>
@@ -473,15 +459,15 @@ footer a:hover { color: var(--accent); }
       </article>
 
       <article class="card" data-cat="web">
-        <div class="kicker">Social app · Demo</div>
+        <div class="kicker">Social app · Prototype</div>
         <h3>Accountabilibuddy</h3>
         <p class="question">Can friends hold each other to screen-time goals better than an app timer can?</p>
+        <img class="thumb" src="accountabilibuddy.jpg" alt="Accountabilibuddy landing page: Put the phone down. Pick your people up." loading="lazy">
         <p>Group screen-time accountability. Form a group, write your own rules, check in weekly to build a streak, and climb a leaderboard against other communities.</p>
-        <div class="mypart"><b>My part</b>Designed how groups, weekly check-ins, streaks, and the leaderboard work, and built the app with accounts and a database.</div>
-        <p class="caveat">Note: the site is a non-working demo. You can look around, but the app doesn't fully work yet.</p>
+        <div class="mypart"><b>My part</b> Designed how groups, weekly check-ins, streaks, and the leaderboard work, and built the app with accounts and a database.</div>
+        <p class="caveat">A prototype: the landing page is built, but the group features aren't finished yet.</p>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Tailwind</span></div>
         <div class="links">
-          <a href="https://accountabilibuddy-six.vercel.app" target="_blank" rel="noopener">Demo ↗</a>
           <a href="https://github.com/YoshiPeretti/accountabilibuddy" target="_blank" rel="noopener">Code</a>
         </div>
       </article>
@@ -491,7 +477,7 @@ footer a:hover { color: var(--accent); }
         <h3>Vibe Search</h3>
         <p class="question">Can I search my music by how it feels instead of what it's called?</p>
         <p>Searches my Spotify liked songs by mood or vibe, like "late-night drive" or "rainy Sunday," and plays the results. Claude writes a description of every song, and each search is matched against those descriptions by meaning, not by title.</p>
-        <div class="mypart"><b>My part</b>Designed how songs get described and how searches are matched, and tuned the results so a search finds songs by feel rather than by words in their titles.</div>
+        <div class="mypart"><b>My part</b> Designed how songs get described and how searches are matched, and tuned the results so a search finds songs by feel rather than by words in their titles.</div>
         <div class="tags"><span class="tag">Supabase</span><span class="tag">pgvector</span><span class="tag">Claude API</span><span class="tag">Spotify API</span></div>
         <div class="links"><span class="na">Private app · limited to approved Spotify accounts</span></div>
       </article>
@@ -501,7 +487,7 @@ footer a:hover { color: var(--accent); }
         <h3>Web Synthesizer</h3>
         <p class="question">How much of a music studio can fit in a single web page?</p>
         <p>A full instrument in the browser: playable keyboard, omnichord, TR-808 drum machine, effects pedalboard, live looper, and MIDI export. One HTML file, zero dependencies, built on the Web Audio API.</p>
-        <div class="mypart"><b>My part</b>Designed the instrument and how its parts connect, from the drum machine to the looper to MIDI export.</div>
+        <div class="mypart"><b>My part</b> Designed the instrument and how its parts connect, from the drum machine to the looper to MIDI export.</div>
         <div class="tags"><span class="tag">Web Audio API</span><span class="tag">Vanilla JS</span><span class="tag">MIDI</span></div>
         <div class="links">
           <a href="https://yoshiperetti.github.io/synthesizer/" target="_blank" rel="noopener">Play it ↗</a>
@@ -510,6 +496,11 @@ footer a:hover { color: var(--accent); }
       </article>
 
     </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p>I'm a high school senior. Besides building things with code, I'm into AI, film, philosophy, and music. You can find all my code on <a href="https://github.com/YoshiPeretti" target="_blank" rel="noopener">GitHub</a>.</p>
   </section>
 
   <footer>
