@@ -188,14 +188,6 @@ section { padding: 24px 0 72px; }
   color: var(--ink); margin-bottom: 12px;
 }
 .card .question { font-size: 18px; }
-.mypart {
-  font-size: 13.5px; color: var(--ink-soft); background: var(--bg-alt); border-radius: 10px;
-  padding: 12px 14px; margin-bottom: 18px;
-}
-.mypart b {
-  display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500;
-  letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px;
-}
 .caveat { font-size: 13px; color: var(--ink-faint); margin: -4px 0 18px; }
 .caveat a { color: var(--ink-soft); }
 
@@ -229,7 +221,7 @@ section { padding: 24px 0 72px; }
 .card .kicker { margin-bottom: 8px; }
 .card h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
 .card p { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; }
-p, li, .mypart { text-wrap: pretty; }
+p, li { text-wrap: pretty; }
 h1, h2, h3, .question { text-wrap: balance; }
 .card .tags { margin-bottom: 18px; }
 .card .links { margin-top: auto; display: flex; gap: 16px; font-size: 13px; font-weight: 500; }
@@ -298,7 +290,7 @@ footer a:hover { color: var(--accent); }
   <header class="hero">
     <h1>Yoshi Peretti</h1>
     <p class="lede">I make data projects and websites. Recently: a fact-checker for political speeches, a campus safety index built from federal data, and a tool that compares your DNA file against GLP-1 drug research.</p>
-    <p class="howiwork"><b>How I work:</b> I build with AI coding tools, mainly Claude Code. The questions, the methods, and the judgment calls about the data are mine, and each project below says what my part was.</p>
+    <p class="howiwork"><b>How I work:</b> I build with AI coding tools, mainly Claude Code. The questions, the methods, and the judgment calls about the data are mine.</p>
     <div class="hero-stats">
       <div><b>8</b>projects</div>
       <div><b>5</b>live sites</div>
@@ -328,7 +320,7 @@ footer a:hover { color: var(--accent); }
             <li>One public rubric drives every judging prompt and the methodology page</li>
             <li>Built-in bias audit, including a test that swaps party labels</li>
           </ul>
-          <div class="mypart"><b>My part</b> I designed the process: check every claim instead of cherry-picking, hide who said it from the judges, put all the rules in one public rubric, and test for bias by swapping party labels. Claude models do the extraction and judging under those rules; I review the results.</div>
+          <p>I designed the process: check every claim instead of cherry-picking, hide who said it from the judges, put all the rules in one public rubric, and test for bias by swapping party labels. Claude models do the extraction and judging under those rules; I review the results.</p>
           <div class="tags">
             <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Claude API</span><span class="tag">zod</span>
           </div>
@@ -368,7 +360,7 @@ footer a:hover { color: var(--accent); }
             <li>Discloses replication failures instead of overselling results</li>
             <li>Accounts, file upload, and saved reports with Supabase</li>
           </ul>
-          <div class="mypart"><b>My part</b> I read the studies and decided which genetic variants to include and how to word the results, including telling users when a finding failed to replicate.</div>
+          <p>I read the studies and decided which genetic variants to include and how to word the results, including telling users when a finding failed to replicate.</p>
           <p class="caveat">Educational only, not medical advice; every report says so and tells users to talk to their prescriber. Your DNA file is read in your browser. Only the six variants the report covers are sent to the server, and reports are saved only if you sign in.</p>
           <div class="tags">
             <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Genomics</span>
@@ -400,7 +392,7 @@ footer a:hover { color: var(--accent); }
             <li>Flags small schools, one-year spikes, and zero-report colleges with large dorms</li>
           </ul>
           <p class="caveat">Reported numbers aren't the same as how often assaults happen: a higher rate can mean students feel safer reporting. The site has its own <a href="https://campus-assault-index.vercel.app" target="_blank" rel="noopener">Underreporting</a> section on this.</p>
-          <div class="mypart"><b>My part</b> I chose the federal data sources and the measure (reports per 10,000 on-campus students), decided which colleges qualify and what gets flagged, and checked the outliers by hand.</div>
+          <p>I chose the federal data sources and the measure (reports per 10,000 on-campus students), decided which colleges qualify and what gets flagged, and checked the outliers by hand.</p>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">Clery Act</span><span class="tag">IPEDS</span><span class="tag">Vercel</span>
           </div>
@@ -437,7 +429,7 @@ footer a:hover { color: var(--accent); }
         <h3>ERA Predictiveness Analyzer</h3>
         <p class="question">Which pitching stats actually predict next season's ERA?</p>
         <p>Backtested regression model that predicts a pitcher's next-season ERA. Built on 800+ pitcher-seasons of FanGraphs data with interactive R² comparisons, 2026 projections, and a scouting profile for every pitcher.</p>
-        <div class="mypart"><b>My part</b> Pulled and cleaned the FanGraphs data in R and tested each stat by how well it predicted the following season, not the same one.</div>
+        <p>I pulled and cleaned the FanGraphs data in R and tested each stat by how well it predicted the following season, not the same one.</p>
         <div class="tags"><span class="tag">R</span><span class="tag">Regression</span><span class="tag">Plotly.js</span></div>
         <div class="links">
           <a href="https://yoshiperetti.github.io/era-predictor/" target="_blank" rel="noopener">Live site ↗</a>
@@ -450,7 +442,7 @@ footer a:hover { color: var(--accent); }
         <h3>Echo Park After School Alliance</h3>
         <p class="question">Where can Echo Park parents find free or affordable after-school programs close to home?</p>
         <p>Interactive map of free and affordable after-school programs in Echo Park, Los Angeles, so parents can find nearby options for their kids.</p>
-        <div class="mypart"><b>My part</b> A student team researched the programs for a Social Innovation Program project. I built the website that puts their research on a map.</div>
+        <p>A student team researched the programs for a Social Innovation Program project, and I built the website that puts their research on a map.</p>
         <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Maps</span><span class="tag">Custom domain</span></div>
         <div class="links">
           <a href="https://echoparkafterschoolalliance.com" target="_blank" rel="noopener">Live site ↗</a>
@@ -464,7 +456,7 @@ footer a:hover { color: var(--accent); }
         <p class="question">Can friends hold each other to screen-time goals better than an app timer can?</p>
         <img class="thumb" src="accountabilibuddy.jpg" alt="Accountabilibuddy landing page: Put the phone down. Pick your people up." loading="lazy">
         <p>Group screen-time accountability. Form a group, write your own rules, check in weekly to build a streak, and climb a leaderboard against other communities.</p>
-        <div class="mypart"><b>My part</b> Designed how groups, weekly check-ins, streaks, and the leaderboard work, and built the app with accounts and a database.</div>
+        <p>I designed how groups, weekly check-ins, streaks, and the leaderboard work, and built the app with accounts and a database.</p>
         <p class="caveat">A prototype: the landing page is built, but the group features aren't finished yet.</p>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Tailwind</span></div>
         <div class="links">
@@ -477,7 +469,7 @@ footer a:hover { color: var(--accent); }
         <h3>Vibe Search</h3>
         <p class="question">Can I search my music by how it feels instead of what it's called?</p>
         <p>Searches my Spotify liked songs by mood or vibe, like "late-night drive" or "rainy Sunday," and plays the results. Claude writes a description of every song, and each search is matched against those descriptions by meaning, not by title.</p>
-        <div class="mypart"><b>My part</b> Designed how songs get described and how searches are matched, and tuned the results so a search finds songs by feel rather than by words in their titles.</div>
+        <p>I designed how songs get described and how searches are matched, and tuned the results so a search finds songs by feel rather than by words in their titles.</p>
         <div class="tags"><span class="tag">Supabase</span><span class="tag">pgvector</span><span class="tag">Claude API</span><span class="tag">Spotify API</span></div>
         <div class="links"><span class="na">Private app · limited to approved Spotify accounts</span></div>
       </article>
@@ -487,7 +479,7 @@ footer a:hover { color: var(--accent); }
         <h3>Web Synthesizer</h3>
         <p class="question">How much of a music studio can fit in a single web page?</p>
         <p>A full instrument in the browser: playable keyboard, omnichord, TR-808 drum machine, effects pedalboard, live looper, and MIDI export. One HTML file, zero dependencies, built on the Web Audio API.</p>
-        <div class="mypart"><b>My part</b> Designed the instrument and how its parts connect, from the drum machine to the looper to MIDI export.</div>
+        <p>I designed the instrument and how its parts connect, from the drum machine to the looper to MIDI export.</p>
         <div class="tags"><span class="tag">Web Audio API</span><span class="tag">Vanilla JS</span><span class="tag">MIDI</span></div>
         <div class="links">
           <a href="https://yoshiperetti.github.io/synthesizer/" target="_blank" rel="noopener">Play it ↗</a>
