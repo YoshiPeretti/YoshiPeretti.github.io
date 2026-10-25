@@ -292,8 +292,8 @@ footer a:hover { color: var(--accent); }
       judgment calls about the data are mine, and each project below says what my part was.
     </p>
     <div class="hero-stats">
-      <div><b>7</b>projects</div>
-      <div><b>5</b>live sites</div>
+      <div><b>8</b>projects</div>
+      <div><b>6</b>live sites</div>
       <div><b>1,590</b>claims fact-checked</div>
       <div><b>1,159</b>colleges compared</div>
     </div>
@@ -473,15 +473,26 @@ footer a:hover { color: var(--accent); }
       </article>
 
       <article class="card" data-cat="web">
-        <div class="kicker">Social app</div>
+        <div class="kicker"><span class="live-dot"></span>Social app · Live</div>
         <h3>Accountabilibuddy</h3>
         <p class="question">Can friends hold each other to screen-time goals better than an app timer can?</p>
         <p>Group screen-time accountability. Form a group, write your own rules, check in weekly to build a streak, and climb a leaderboard against other communities.</p>
         <div class="mypart"><b>My part</b>Designed how groups, weekly check-ins, streaks, and the leaderboard work, and built the app with accounts and a database.</div>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Tailwind</span></div>
         <div class="links">
+          <a href="https://accountabilibuddy-six.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
           <a href="https://github.com/YoshiPeretti/accountabilibuddy" target="_blank" rel="noopener">Code</a>
         </div>
+      </article>
+
+      <article class="card" data-cat="web">
+        <div class="kicker">Music · Private</div>
+        <h3>Vibe Search</h3>
+        <p class="question">Can I search my music by how it feels instead of what it's called?</p>
+        <p>Searches my Spotify liked songs by mood or vibe, like "late-night drive" or "rainy Sunday," and plays the results. Claude writes a description of every song, and each search is matched against those descriptions by meaning, not by title.</p>
+        <div class="mypart"><b>My part</b>Designed how songs get described and how searches are matched, and tuned the results so a search finds songs by feel rather than by words in their titles.</div>
+        <div class="tags"><span class="tag">Supabase</span><span class="tag">pgvector</span><span class="tag">Claude API</span><span class="tag">Spotify API</span></div>
+        <div class="links"><span class="na">Private app · limited to approved Spotify accounts</span></div>
       </article>
 
       <article class="card" data-cat="creative">
