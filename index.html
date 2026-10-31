@@ -222,15 +222,13 @@ h1, h2, h3, .question { text-wrap: balance; }
 .card .links { margin-top: auto; display: flex; gap: 16px; font-size: 13px; font-weight: 500; }
 .card .links a { text-decoration: none; color: var(--accent); }
 .card .links a:hover { text-decoration: underline; }
-.card img.thumb {
-  width: 100%; border-radius: 10px; border: 1px solid var(--line); margin-bottom: 16px; background: #f5f1ea;
-}
 .card .links .na { color: var(--ink-faint); font-weight: 400; }
 .live-dot {
   display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--ok);
   margin-right: 6px; vertical-align: 1px;
 }
 
+.more-note { margin-top: 28px; font-size: 15px; color: var(--ink-soft); }
 .about {
   display: grid; grid-template-columns: 1fr 2fr; gap: 24px 48px; align-items: baseline;
   padding: 48px 0 64px; border-top: 1px solid var(--line);
@@ -286,7 +284,7 @@ footer a:hover { color: var(--accent); }
     <h1>Yoshi Peretti</h1>
     <p class="lede">I make data projects and websites. Recently: a fact-checker for political speeches, a campus safety index built from federal data, and a tool that compares your DNA file against GLP-1 drug research.</p>
     <div class="hero-stats">
-      <div><b>8</b>projects</div>
+      <div><b>7</b>projects</div>
       <div><b>5</b>live sites</div>
       <div><b>1,590</b>claims fact-checked</div>
       <div><b>1,159</b>colleges compared</div>
@@ -301,46 +299,6 @@ footer a:hover { color: var(--accent); }
     </div>
 
     <div class="featured">
-
-      <!-- Truth Profile -->
-      <article class="feature">
-        <div class="feature-body">
-          <div class="kicker">Civic tech · In progress</div>
-          <h3>Truth Profile</h3>
-          <p class="question">What share of what politicians say is actually true, measured the same way for everyone?</p>
-          <p>Every checkable factual claim in politicians' speeches, extracted in full and verified <em>name-blind</em> by adversarial AI judges against primary evidence. Each claim is published with the sample size, uncertainty, evidence, dissent, and a public dispute channel.</p>
-          <ul>
-            <li>1,590 claims from 16 speeches by 8 politicians across both parties</li>
-            <li>One public rubric drives every judging prompt and the methodology page</li>
-            <li>Built-in bias audit, including a test that swaps party labels</li>
-          </ul>
-          <p>I designed the process: check every claim instead of cherry-picking, hide who said it from the judges, put all the rules in one public rubric, and test for bias by swapping party labels. Claude models do the extraction and judging under those rules; I review the results.</p>
-          <div class="tags">
-            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Claude API</span><span class="tag">zod</span>
-          </div>
-          <div class="actions">
-            <span class="btn muted">In progress · not public yet</span>
-          </div>
-        </div>
-        <div class="feature-visual" aria-hidden="true">
-          <div class="vis-stat">
-            <div class="big">1,590</div>
-            <div class="lbl">claims extracted and verified</div>
-            <div class="verdict-bar">
-              <i style="flex:1283;background:#1f9d6a"></i>
-              <i style="flex:127;background:#d08c0a"></i>
-              <i style="flex:109;background:#c8336b"></i>
-              <i style="flex:71;background:#8a8a8a"></i>
-            </div>
-            <div class="legend">
-              <span style="--c:#1f9d6a">True 81%</span>
-              <span style="--c:#d08c0a">Exaggerated or misleading 8%</span>
-              <span style="--c:#c8336b">False 7%</span>
-              <span style="--c:#8a8a8a">Unresolved 4%</span>
-            </div>
-          </div>
-        </div>
-      </article>
 
       <!-- glp1genome -->
       <article class="feature">
@@ -407,6 +365,46 @@ footer a:hover { color: var(--accent); }
         </div>
       </article>
 
+      <!-- Truth Profile -->
+      <article class="feature">
+        <div class="feature-body">
+          <div class="kicker">Civic tech · In progress</div>
+          <h3>Truth Profile</h3>
+          <p class="question">What share of what politicians say is actually true, measured the same way for everyone?</p>
+          <p>Every checkable factual claim in politicians' speeches, extracted in full and verified <em>name-blind</em> by adversarial AI judges against primary evidence. Each claim is published with the sample size, uncertainty, evidence, dissent, and a public dispute channel.</p>
+          <ul>
+            <li>1,590 claims from 16 speeches by 8 politicians across both parties</li>
+            <li>One public rubric drives every judging prompt and the methodology page</li>
+            <li>Built-in bias audit, including a test that swaps party labels</li>
+          </ul>
+          <p>I designed the process: check every claim instead of cherry-picking, hide who said it from the judges, put all the rules in one public rubric, and test for bias by swapping party labels. Claude models do the extraction and judging under those rules; I review the results.</p>
+          <div class="tags">
+            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Claude API</span><span class="tag">zod</span>
+          </div>
+          <div class="actions">
+            <span class="btn muted">In progress · not public yet</span>
+          </div>
+        </div>
+        <div class="feature-visual" aria-hidden="true">
+          <div class="vis-stat">
+            <div class="big">1,590</div>
+            <div class="lbl">claims extracted and verified</div>
+            <div class="verdict-bar">
+              <i style="flex:1283;background:#1f9d6a"></i>
+              <i style="flex:127;background:#d08c0a"></i>
+              <i style="flex:109;background:#c8336b"></i>
+              <i style="flex:71;background:#8a8a8a"></i>
+            </div>
+            <div class="legend">
+              <span style="--c:#1f9d6a">True 81%</span>
+              <span style="--c:#d08c0a">Exaggerated or misleading 8%</span>
+              <span style="--c:#c8336b">False 7%</span>
+              <span style="--c:#8a8a8a">Unresolved 4%</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -444,19 +442,6 @@ footer a:hover { color: var(--accent); }
         </div>
       </article>
 
-      <article class="card" data-cat="web">
-        <div class="kicker">Social app · Prototype</div>
-        <h3>Accountabilibuddy</h3>
-        <p class="question">Can friends hold each other to screen-time goals better than an app timer can?</p>
-        <img class="thumb" src="accountabilibuddy.jpg" alt="Accountabilibuddy landing page: Put the phone down. Pick your people up." loading="lazy">
-        <p>Group screen-time accountability. Form a group, write your own rules, check in weekly to build a streak, and climb a leaderboard against other communities.</p>
-        <p>I designed how groups, weekly check-ins, streaks, and the leaderboard work, and built the app with accounts and a database.</p>
-        <p class="caveat">A prototype: the landing page is built, but the group features aren't finished yet.</p>
-        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Tailwind</span></div>
-        <div class="links">
-          <a href="https://github.com/YoshiPeretti/accountabilibuddy" target="_blank" rel="noopener">Code</a>
-        </div>
-      </article>
 
       <article class="card" data-cat="web">
         <div class="kicker">Music · Private</div>
@@ -482,6 +467,7 @@ footer a:hover { color: var(--accent); }
       </article>
 
     </div>
+    <p class="more-note">I've also made a bunch of smaller projects just for family and friends that aren't listed here.</p>
   </section>
 
   <section class="about" id="about">
